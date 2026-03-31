@@ -1,0 +1,13 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#1f2937"/>
+  <path d="M286 598h628v90H286z" fill="#111827"/>
+  <path d="M352 562l68-174 140 122 132-168 150 220H352z" fill="#f59e0b"/>
+  <circle cx="506" cy="290" r="34" fill="#fde68a"/>
+  <circle cx="618" cy="244" r="38" fill="#fde68a"/>
+  <circle cx="742" cy="286" r="34" fill="#fde68a"/>
+  <rect x="850" y="222" width="108" height="200" rx="54" fill="#e5e7eb"/>
+  <rect x="894" y="414" width="20" height="138" fill="#e5e7eb"/>
+  <rect x="842" y="548" width="124" height="22" rx="11" fill="#e5e7eb"/>
+  <text x="88" y="118" fill="#f9fafb" font-family="Arial, sans-serif" font-size="58" font-weight="700">Scene musicale</text>
+  <text x="88" y="170" fill="#fde68a" font-family="Arial, sans-serif" font-size="28">Couronne et micro pour la pop culture</text>
+</svg>

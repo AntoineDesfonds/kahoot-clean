@@ -1,0 +1,11 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#1e293b"/>
+  <circle cx="936" cy="148" r="140" fill="#fef3c7" fill-opacity="0.14"/>
+  <circle cx="600" cy="408" r="252" fill="#d6b38a"/>
+  <path d="M360 296c84 28 208 34 480 0" stroke="#8b5e3c" stroke-width="34" stroke-linecap="round" fill="none" opacity="0.72"/>
+  <path d="M344 376c98 16 228 18 512-8" stroke="#f3d3ab" stroke-width="42" stroke-linecap="round" fill="none" opacity="0.64"/>
+  <path d="M350 470c120 30 264 24 500-10" stroke="#b97c50" stroke-width="38" stroke-linecap="round" fill="none" opacity="0.68"/>
+  <ellipse cx="700" cy="470" rx="72" ry="46" fill="#c2410c" fill-opacity="0.78"/>
+  <text x="88" y="118" fill="#f8fafc" font-family="Arial, sans-serif" font-size="58" font-weight="700">Jupiter</text>
+  <text x="88" y="170" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="28">Grande planete gazeuse et tache rouge</text>
+</svg>

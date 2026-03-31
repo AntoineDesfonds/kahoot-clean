@@ -1,0 +1,11 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#374151"/>
+  <path d="M0 660h1200v140H0z" fill="#111827"/>
+  <rect x="160" y="250" width="310" height="330" rx="18" fill="#9ca3af"/>
+  <rect x="510" y="210" width="230" height="390" rx="18" fill="#d1d5db"/>
+  <rect x="780" y="250" width="260" height="330" rx="18" fill="#9ca3af"/>
+  <path d="M520 250l70 110-48 88 78 110-84 42-146-188 130-162z" fill="#ef4444"/>
+  <path d="M652 210l56 104-40 74 58 82-74 130-116-162 116-228z" fill="#38bdf8"/>
+  <text x="88" y="118" fill="#f8fafc" font-family="Arial, sans-serif" font-size="58" font-weight="700">Berlin 1989</text>
+  <text x="88" y="170" fill="#d1d5db" font-family="Arial, sans-serif" font-size="28">Le mur tombe et la ville souvre</text>
+</svg>

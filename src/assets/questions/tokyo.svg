@@ -1,0 +1,10 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#b91c1c"/>
+  <circle cx="930" cy="170" r="120" fill="#fde68a" fill-opacity="0.9"/>
+  <path d="M168 612h864v108H168z" fill="#1f2937" fill-opacity="0.42"/>
+  <path d="M204 590h140v130H204zM386 520h120v200H386zM556 470h108v250H556zM716 548h128v172H716zM892 500h118v220H892z" fill="#fef2f2" fill-opacity="0.62"/>
+  <path d="M300 360h220v24H300zM326 384h24v140h-24zM470 384h24v140h-24zM260 524h300v26H260z" fill="#fff7ed"/>
+  <path d="M360 298c42 0 77 35 77 78v10H283v-10c0-43 35-78 77-78z" fill="#fecaca" fill-opacity="0.74"/>
+  <text x="88" y="118" fill="#fff7ed" font-family="Arial, sans-serif" font-size="58" font-weight="700">Tokyo</text>
+  <text x="88" y="170" fill="#fee2e2" font-family="Arial, sans-serif" font-size="28">Torii, soleil et tours</text>
+</svg>

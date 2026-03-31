@@ -1,0 +1,17 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#020617"/>
+  <circle cx="600" cy="400" r="88" fill="#f59e0b"/>
+  <circle cx="600" cy="400" r="146" stroke="#334155" stroke-width="4"/>
+  <circle cx="600" cy="400" r="210" stroke="#334155" stroke-width="4"/>
+  <circle cx="600" cy="400" r="274" stroke="#334155" stroke-width="4"/>
+  <circle cx="738" cy="400" r="18" fill="#fcd34d"/>
+  <circle cx="390" cy="400" r="24" fill="#60a5fa"/>
+  <circle cx="842" cy="400" r="30" fill="#fb7185"/>
+  <circle cx="600" cy="126" r="38" fill="#22c55e"/>
+  <circle cx="600" cy="674" r="28" fill="#c084fc"/>
+  <circle cx="250" cy="220" r="16" fill="#e2e8f0"/>
+  <circle cx="934" cy="592" r="22" fill="#a78bfa"/>
+  <circle cx="962" cy="262" r="18" fill="#fca5a5"/>
+  <text x="88" y="118" fill="#f8fafc" font-family="Arial, sans-serif" font-size="58" font-weight="700">Systeme solaire</text>
+  <text x="88" y="170" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="28">Huit planetes autour du Soleil</text>
+</svg>

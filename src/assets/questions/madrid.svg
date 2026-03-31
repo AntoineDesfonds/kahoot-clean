@@ -1,0 +1,15 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#b91c1c"/>
+  <circle cx="946" cy="156" r="122" fill="#fde68a" fill-opacity="0.36"/>
+  <rect y="592" width="1200" height="208" fill="#431407" fill-opacity="0.16"/>
+  <path d="M254 624h692V360H254z" fill="#fef2f2" fill-opacity="0.7"/>
+  <path d="M312 624V438h104v186H312zM470 624V404h118v220H470zM646 624V438h98v186H646zM792 624V404h96v220H792z" fill="#fecaca" fill-opacity="0.84"/>
+  <path d="M232 360h736v42H232z" fill="#fde68a"/>
+  <path d="M284 330h632v36H284z" fill="#fef3c7"/>
+  <path d="M530 250h140v110H530z" fill="#fef2f2"/>
+  <path d="M510 286h180v28H510z" fill="#b91c1c"/>
+  <path d="M566 468h68v156h-68z" fill="#7f1d1d" fill-opacity="0.72"/>
+  <circle cx="600" cy="262" r="22" fill="#fde68a"/>
+  <text x="88" y="118" fill="#fff7ed" font-family="Arial, sans-serif" font-size="58" font-weight="700">Madrid</text>
+  <text x="88" y="170" fill="#fee2e2" font-family="Arial, sans-serif" font-size="28">Place royale et facade lumineuse</text>
+</svg>

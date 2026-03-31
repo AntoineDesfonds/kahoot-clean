@@ -1,0 +1,16 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#1d4ed8"/>
+  <circle cx="980" cy="150" r="118" fill="#f8fafc" fill-opacity="0.2"/>
+  <rect y="592" width="1200" height="208" fill="#0f172a" fill-opacity="0.22"/>
+  <rect x="180" y="470" width="120" height="180" rx="20" fill="#bfdbfe" fill-opacity="0.55"/>
+  <rect x="322" y="398" width="138" height="252" rx="22" fill="#dbeafe" fill-opacity="0.68"/>
+  <rect x="784" y="430" width="116" height="220" rx="22" fill="#dbeafe" fill-opacity="0.52"/>
+  <rect x="926" y="368" width="152" height="282" rx="24" fill="#eff6ff" fill-opacity="0.48"/>
+  <path d="M562 252h72v316h-72z" fill="#f8fafc"/>
+  <path d="M544 318h108v48H544zM544 414h108v48H544zM528 564h140v84H528z" fill="#dbeafe"/>
+  <path d="M518 232l80-76 80 76H518z" fill="#fef3c7"/>
+  <path d="M668 312h64v256h-64z" fill="#93c5fd"/>
+  <circle cx="700" cy="278" r="28" fill="#fde68a"/>
+  <text x="88" y="118" fill="#eff6ff" font-family="Arial, sans-serif" font-size="58" font-weight="700">Londres</text>
+  <text x="88" y="170" fill="#dbeafe" font-family="Arial, sans-serif" font-size="28">Big Ben et skyline</text>
+</svg>

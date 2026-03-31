@@ -1,0 +1,13 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#111827"/>
+  <circle cx="968" cy="166" r="126" fill="#fbbf24" fill-opacity="0.28"/>
+  <rect y="608" width="1200" height="192" fill="#7f1d1d" fill-opacity="0.22"/>
+  <path d="M208 590h788v112H208z" fill="#f9fafb" fill-opacity="0.18"/>
+  <path d="M336 410h84v230h-84zM454 356h98v284h-98zM590 456h80v184h-80zM710 386h94v254h-94zM842 434h120v206H842z" fill="#f3f4f6" fill-opacity="0.56"/>
+  <path d="M492 246h22v116h-22zM470 270h66v20h-66zM474 300h58v16h-58zM480 330h46v12h-46z" fill="#fef3c7"/>
+  <path d="M250 488h110v44H250z" fill="#ef4444" fill-opacity="0.88"/>
+  <path d="M250 532h110v44H250z" fill="#f59e0b" fill-opacity="0.88"/>
+  <path d="M250 444h110v44H250z" fill="#111827"/>
+  <text x="88" y="118" fill="#f9fafb" font-family="Arial, sans-serif" font-size="58" font-weight="700">Berlin</text>
+  <text x="88" y="170" fill="#d1d5db" font-family="Arial, sans-serif" font-size="28">Porte de Brandebourg et couleurs du drapeau</text>
+</svg>

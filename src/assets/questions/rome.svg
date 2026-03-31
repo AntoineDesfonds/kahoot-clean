@@ -1,0 +1,11 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#9a3412"/>
+  <circle cx="944" cy="156" r="128" fill="#fde68a" fill-opacity="0.32"/>
+  <rect y="604" width="1200" height="196" fill="#431407" fill-opacity="0.18"/>
+  <path d="M258 626h684V402H258z" fill="#f3d3ab" fill-opacity="0.8"/>
+  <path d="M322 438h548v152H322z" fill="#7c2d12" fill-opacity="0.26"/>
+  <path d="M342 454h80v120h-80zM454 454h80v120h-80zM566 454h80v120h-80zM678 454h80v120h-80zM790 454h48v120h-48z" fill="#fde68a" fill-opacity="0.36"/>
+  <path d="M258 402c46-44 114-74 200-74h284c86 0 154 30 200 74H258z" fill="#fed7aa" fill-opacity="0.76"/>
+  <text x="88" y="118" fill="#fff7ed" font-family="Arial, sans-serif" font-size="58" font-weight="700">Rome</text>
+  <text x="88" y="170" fill="#fed7aa" font-family="Arial, sans-serif" font-size="28">Colisee et pierre antique</text>
+</svg>

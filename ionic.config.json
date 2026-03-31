@@ -1,0 +1,7 @@
+{
+  "name": "kahoot",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

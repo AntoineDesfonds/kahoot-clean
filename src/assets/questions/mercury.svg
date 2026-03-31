@@ -1,0 +1,10 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#1f2937"/>
+  <circle cx="920" cy="144" r="132" fill="#f8fafc" fill-opacity="0.1"/>
+  <circle cx="600" cy="412" r="220" fill="#94a3b8"/>
+  <circle cx="536" cy="346" r="40" fill="#cbd5e1" fill-opacity="0.4"/>
+  <circle cx="694" cy="470" r="34" fill="#475569" fill-opacity="0.5"/>
+  <circle cx="632" cy="556" r="24" fill="#334155" fill-opacity="0.42"/>
+  <text x="88" y="118" fill="#f8fafc" font-family="Arial, sans-serif" font-size="58" font-weight="700">Mercure</text>
+  <text x="88" y="170" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="28">Petite planete rocheuse</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#B45309"/>
+  <circle cx="214" cy="170" r="190" fill="#F59E0B" fill-opacity="0.42"/>
+  <circle cx="1010" cy="640" r="280" fill="#FDE68A" fill-opacity="0.24"/>
+  <path d="M266 541C266 426 359 333 474 333C589 333 682 426 682 541C682 656 589 749 474 749C359 749 266 656 266 541Z" fill="#FFF7ED" fill-opacity="0.82"/>
+  <path d="M438 145L563 313H313L438 145Z" fill="#FFFBEB"/>
+  <circle cx="474" cy="541" r="88" fill="#F59E0B" fill-opacity="0.45"/>
+  <path d="M760 201C820 168 894 170 950 206C1006 242 1041 306 1041 374C1041 442 1006 506 950 542C894 578 820 580 760 547L800 479C842 501 891 500 931 478C971 455 995 417 995 374C995 331 971 293 931 270C891 248 842 247 800 269L760 201Z" fill="#FFF7ED"/>
+  <path d="M744 374C744 304 801 247 871 247C941 247 998 304 998 374C998 444 941 501 871 501C801 501 744 444 744 374Z" stroke="#FFF7ED" stroke-width="20"/>
+  <text x="92" y="122" fill="#FFF7ED" font-family="Arial, sans-serif" font-size="60" font-weight="700">Sciences</text>
+  <text x="92" y="178" fill="#FDE68A" font-family="Arial, sans-serif" font-size="28">Planetes, matiere et experiences rapides</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#0F766E"/>
+  <circle cx="970" cy="170" r="220" fill="#14B8A6" fill-opacity="0.42"/>
+  <circle cx="250" cy="650" r="260" fill="#99F6E4" fill-opacity="0.34"/>
+  <path d="M164 188C295 113 472 125 587 220C702 315 823 404 960 388C1030 380 1091 343 1130 314V596C1052 648 943 690 825 690C650 690 530 592 398 552C292 519 171 531 76 571V248C106 228 134 206 164 188Z" fill="#CCFBF1" fill-opacity="0.22"/>
+  <path d="M223 310H507L468 412H184L223 310Z" fill="#F0FDFA"/>
+  <path d="M593 252L790 313L660 458L593 252Z" fill="#F0FDFA"/>
+  <path d="M802 498L956 459L1002 591L844 626L802 498Z" fill="#F0FDFA"/>
+  <path d="M143 464L290 435L337 559L183 603L143 464Z" fill="#F0FDFA" fill-opacity="0.84"/>
+  <text x="92" y="122" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="60" font-weight="700">Geographie</text>
+  <text x="92" y="178" fill="#D1FAE5" font-family="Arial, sans-serif" font-size="28">Capitales, cartes et reperes du monde</text>
+</svg>

@@ -1,0 +1,108 @@
+mutation CreateDemoData @transaction @auth(level: USER, insecureReason: "This mutation is for seeding demo data and can be run by any logged in user.") {
+  user1: user_insert(data: {
+    id: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+    username: "quizmaster1",
+    email: "quizmaster1@example.com",
+    passwordHash: "hashedpassword1",
+    createdAt: "2023-01-01T10:00:00Z",
+    displayName: "Quiz Master One"
+  })
+  user2: user_insert(data: {
+    id: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a12",
+    username: "player1",
+    email: "player1@example.com",
+    passwordHash: "hashedpassword2",
+    createdAt: "2023-01-01T10:05:00Z",
+    displayName: "Player One"
+  })
+  user3: user_insert(data: {
+    id: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a13",
+    username: "player2",
+    email: "player2@example.com",
+    passwordHash: "hashedpassword3",
+    createdAt: "2023-01-01T10:10:00Z",
+    displayName: "Player Two"
+  })
+
+  quiz1: quiz_insert(data: {
+    id: "b0eebc99-9c0b-4ef8-bb6d-6bb9bd380b21",
+    title: "General Knowledge Quiz",
+    description: "A fun quiz to test your general knowledge!",
+    createdAt: "2023-01-02T11:00:00Z",
+    createdByUserId: {id: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"},
+    visibility: "public"
+  })
+
+  question1: question_insert(data: {
+    id: "c0eebc99-9c0b-4ef8-bb6d-6bb9bd380c31",
+    quizId: {id: "b0eebc99-9c0b-4ef8-bb6d-6bb9bd380b21"},
+    text: "What is the capital of France?",
+    questionType: "multiple_choice",
+    order: 1,
+    timeLimitSeconds: 20
+  })
+  question2: question_insert(data: {
+    id: "c0eebc99-9c0b-4ef8-bb6d-6bb9bd380c32",
+    quizId: {id: "b0eebc99-9c0b-4ef8-bb6d-6bb9bd380b21"},
+    text: "Which planet is known as the Red Planet?",
+    questionType: "multiple_choice",
+    order: 2,
+    timeLimitSeconds: 25
+  })
+
+  answerOption1: answerOption_insert(data: {
+    questionId: {id: "c0eebc99-9c0b-4ef8-bb6d-6bb9bd380c31"},
+    text: "Berlin",
+    isCorrect: false
+  })
+  answerOption2: answerOption_insert(data: {
+    questionId: {id: "c0eebc99-9c0b-4ef8-bb6d-6bb9bd380c31"},
+    text: "Paris",
+    isCorrect: true
+  })
+  answerOption3: answerOption_insert(data: {
+    questionId: {id: "c0eebc99-9c0b-4ef8-bb6d-6bb9bd380c31"},
+    text: "Rome",
+    isCorrect: false
+  })
+  answerOption4: answerOption_insert(data: {
+    questionId: {id: "c0eebc99-9c0b-4ef8-bb6d-6bb9bd380c32"},
+    text: "Earth",
+    isCorrect: false
+  })
+  answerOption5: answerOption_insert(data: {
+    questionId: {id: "c0eebc99-9c0b-4ef8-bb6d-6bb9bd380c32"},
+    text: "Mars",
+    isCorrect: true
+  })
+  answerOption6: answerOption_insert(data: {
+    questionId: {id: "c0eebc99-9c0b-4ef8-bb6d-6bb9bd380c32"},
+    text: "Jupiter",
+    isCorrect: false
+  })
+
+  gameSession1: gameSession_insert(data: {
+    id: "d0eebc99-9c0b-4ef8-bb6d-6bb9bd380d41",
+    quizId: {id: "b0eebc99-9c0b-4ef8-bb6d-6bb9bd380b21"},
+    hostUserId: {id: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"},
+    gameCode: "ABC123",
+    status: "active",
+    createdAt: "2023-01-03T12:00:00Z",
+    currentQuestionId: {id: "c0eebc99-9c0b-4ef8-bb6d-6bb9bd380c31"}
+  })
+
+  playerScore1: playerScore_insert(data: {
+    gameSessionId: {id: "d0eebc99-9c0b-4ef8-bb6d-6bb9bd380d41"},
+    userId: {id: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a12"},
+    score: 150,
+    joinedAt: "2023-01-03T12:01:00Z",
+    nickname: "PlayerOneCool"
+  })
+  playerScore2: playerScore_insert(data: {
+    gameSessionId: {id: "d0eebc99-9c0b-4ef8-bb6d-6bb9bd380d41"},
+    userId: {id: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a13"},
+    score: 120,
+    joinedAt: "2023-01-03T12:02:00Z",
+    nickname: "PlayerTwoAwesome"
+  })
+}

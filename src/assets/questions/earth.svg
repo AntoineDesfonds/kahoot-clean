@@ -1,0 +1,9 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#082f49"/>
+  <circle cx="948" cy="150" r="132" fill="#e0f2fe" fill-opacity="0.1"/>
+  <circle cx="600" cy="408" r="230" fill="#38bdf8"/>
+  <path d="M490 302c52-30 122-26 184 18 28 20 74 22 106 2 8 66-30 130-88 158-58 28-120 20-160-10-42-32-86-28-122 0-40-58-24-128 24-168 16 12 38 12 56 0z" fill="#22c55e" fill-opacity="0.92"/>
+  <path d="M426 520c36-18 90-10 122 18 28 24 72 28 110 10 38-18 88-12 124 16-42 64-114 104-192 104-74 0-142-36-186-92 8-24 14-40 22-56z" fill="#16a34a" fill-opacity="0.9"/>
+  <text x="88" y="118" fill="#f0f9ff" font-family="Arial, sans-serif" font-size="58" font-weight="700">Terre</text>
+  <text x="88" y="170" fill="#bae6fd" font-family="Arial, sans-serif" font-size="28">Ocean bleu et continents verts</text>
+</svg>

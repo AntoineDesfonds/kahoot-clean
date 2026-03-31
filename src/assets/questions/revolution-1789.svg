@@ -1,0 +1,11 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#111827"/>
+  <rect x="150" y="170" width="108" height="310" fill="#1d4ed8"/>
+  <rect x="258" y="170" width="108" height="310" fill="#f8fafc"/>
+  <rect x="366" y="170" width="108" height="310" fill="#dc2626"/>
+  <path d="M140 620h920v96H140z" fill="#334155"/>
+  <path d="M270 620l136-96 112 70 146-108 136 134H270z" fill="#f8fafc" fill-opacity="0.16"/>
+  <text x="734" y="360" fill="#f8fafc" font-family="Arial, sans-serif" font-size="128" font-weight="700">1789</text>
+  <text x="88" y="118" fill="#f8fafc" font-family="Arial, sans-serif" font-size="58" font-weight="700">Revolution francaise</text>
+  <text x="88" y="170" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="28">Le grand repere historique</text>
+</svg>

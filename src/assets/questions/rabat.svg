@@ -1,0 +1,13 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#0f4c81"/>
+  <rect y="580" width="1200" height="220" fill="#022c43" fill-opacity="0.35"/>
+  <rect x="520" y="180" width="150" height="420" rx="18" fill="#f1f5f9"/>
+  <rect x="550" y="144" width="90" height="48" fill="#e2e8f0"/>
+  <rect x="568" y="248" width="54" height="38" fill="#0f4c81" fill-opacity="0.2"/>
+  <rect x="568" y="318" width="54" height="38" fill="#0f4c81" fill-opacity="0.2"/>
+  <rect x="568" y="388" width="54" height="38" fill="#0f4c81" fill-opacity="0.2"/>
+  <path d="M236 620c26-80 48-124 66-132 19 8 41 52 67 132h-42c-7-33-15-55-25-66v66h-33v-66c-10 11-18 33-24 66h-42z" fill="#86efac"/>
+  <path d="M842 620c30-92 58-142 82-150 24 8 51 58 83 150h-49c-8-38-18-63-31-76v76h-39v-76c-13 13-23 38-31 76h-49z" fill="#86efac"/>
+  <text x="88" y="118" fill="#f8fafc" font-family="Arial, sans-serif" font-size="58" font-weight="700">Rabat</text>
+  <text x="88" y="170" fill="#bfdbfe" font-family="Arial, sans-serif" font-size="28">Tour, palmiers et ciel atlantique</text>
+</svg>

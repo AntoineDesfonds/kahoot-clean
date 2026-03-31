@@ -1,0 +1,13 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#1D4ED8"/>
+  <circle cx="980" cy="180" r="250" fill="#60A5FA" fill-opacity="0.35"/>
+  <circle cx="230" cy="610" r="240" fill="#BFDBFE" fill-opacity="0.22"/>
+  <path d="M154 498C154 419 218 355 297 355H903C982 355 1046 419 1046 498V516C1046 595 982 659 903 659H297C218 659 154 595 154 516V498Z" fill="#EFF6FF"/>
+  <path d="M220 279C220 229 261 188 311 188H889C939 188 980 229 980 279V355H220V279Z" fill="#DBEAFE"/>
+  <path d="M330 252H870V288H330V252Z" fill="#2563EB"/>
+  <circle cx="379" cy="507" r="90" fill="#2563EB" fill-opacity="0.18"/>
+  <circle cx="600" cy="507" r="90" fill="#2563EB" fill-opacity="0.18"/>
+  <circle cx="821" cy="507" r="90" fill="#2563EB" fill-opacity="0.18"/>
+  <text x="92" y="122" fill="#EFF6FF" font-family="Arial, sans-serif" font-size="60" font-weight="700">Culture generale</text>
+  <text x="92" y="178" fill="#BFDBFE" font-family="Arial, sans-serif" font-size="28">Cinema, musique, litterature et references pop</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#1d4ed8"/>
+  <path d="M0 0L500 0L1200 470V800H700L0 330V0zM1200 0V330L500 800H0V470L700 0H1200z" fill="#f8fafc"/>
+  <path d="M0 0L420 0L1200 530V800H780L0 270V0zM1200 0V270L420 800H0V530L780 0H1200z" fill="#dc2626"/>
+  <rect x="500" width="200" height="800" fill="#f8fafc"/>
+  <rect y="300" width="1200" height="200" fill="#f8fafc"/>
+  <rect x="544" width="112" height="800" fill="#dc2626"/>
+  <rect y="344" width="1200" height="112" fill="#dc2626"/>
+  <rect x="56" y="56" width="420" height="104" rx="28" fill="#0f172a" fill-opacity="0.14"/>
+  <text x="88" y="124" fill="#f8fafc" font-family="Arial, sans-serif" font-size="58" font-weight="700">Royaume-Uni</text>
+</svg>

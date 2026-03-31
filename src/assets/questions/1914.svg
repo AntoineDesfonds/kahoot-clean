@@ -1,0 +1,12 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#7c5a3c"/>
+  <rect x="178" y="152" width="844" height="496" rx="28" fill="#f5e7d0"/>
+  <rect x="178" y="152" width="844" height="96" rx="28" fill="#b45309"/>
+  <text x="520" y="216" fill="#fff7ed" font-family="Arial, sans-serif" font-size="54" font-weight="700">JUIN 1914</text>
+  <path d="M332 344h522v222H332z" fill="#d6c4a9"/>
+  <path d="M402 548l80-110 86 70 104-128 112 168H402z" fill="#7c5a3c" fill-opacity="0.66"/>
+  <circle cx="466" cy="366" r="34" fill="#b45309"/>
+  <circle cx="784" cy="366" r="34" fill="#b45309"/>
+  <text x="88" y="118" fill="#fff7ed" font-family="Arial, sans-serif" font-size="58" font-weight="700">1914</text>
+  <text x="88" y="170" fill="#fde68a" font-family="Arial, sans-serif" font-size="28">L evenement qui lance la guerre</text>
+</svg>

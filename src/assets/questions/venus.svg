@@ -1,0 +1,9 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#7c2d12"/>
+  <circle cx="922" cy="144" r="136" fill="#fde68a" fill-opacity="0.18"/>
+  <circle cx="600" cy="410" r="228" fill="#f59e0b"/>
+  <path d="M420 366c42-56 134-78 230-52s156 32 212-18" stroke="#fde68a" stroke-width="34" stroke-linecap="round" fill="none" opacity="0.42"/>
+  <path d="M392 470c64 22 146 18 238-12s158-26 224 12" stroke="#fff7ed" stroke-width="30" stroke-linecap="round" fill="none" opacity="0.3"/>
+  <text x="88" y="118" fill="#fff7ed" font-family="Arial, sans-serif" font-size="58" font-weight="700">Venus</text>
+  <text x="88" y="170" fill="#fde68a" font-family="Arial, sans-serif" font-size="28">Nuages epais et chaleur intense</text>
+</svg>

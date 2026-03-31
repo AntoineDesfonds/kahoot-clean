@@ -1,0 +1,7 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="800" fill="#1d4ed8"/>
+  <rect x="400" width="400" height="800" fill="#f8fafc"/>
+  <rect x="800" width="400" height="800" fill="#dc2626"/>
+  <rect x="56" y="56" width="320" height="104" rx="28" fill="#0f172a" fill-opacity="0.14"/>
+  <text x="88" y="124" fill="#f8fafc" font-family="Arial, sans-serif" font-size="58" font-weight="700">France</text>
+</svg>

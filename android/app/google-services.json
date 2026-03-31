@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "565593715313",
+    "project_id": "kahoot-fcbbc",
+    "storage_bucket": "kahoot-fcbbc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565593715313:android:e597a794299163f07d61d0",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjbVA-DmNzCjec1CpnlcfFapzJmhP-iy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

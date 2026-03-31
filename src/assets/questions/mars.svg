@@ -1,0 +1,12 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#9a3412"/>
+  <circle cx="876" cy="220" r="182" fill="#fb923c" fill-opacity="0.62"/>
+  <circle cx="876" cy="220" r="118" fill="#fdba74" fill-opacity="0.46"/>
+  <path d="M0 650c154-72 296-72 428 0 137 74 278 74 430 0 126-62 240-62 342 0v150H0V650z" fill="#7c2d12"/>
+  <path d="M454 566h108l30 34-18 22h-144l-18-22 42-34z" fill="#e2e8f0"/>
+  <circle cx="478" cy="640" r="28" fill="#1f2937"/>
+  <circle cx="590" cy="640" r="28" fill="#1f2937"/>
+  <path d="M514 566l34-90 18 8-16 82h-36zM590 566l42-54 12 12-24 42h-30z" fill="#f8fafc"/>
+  <text x="88" y="118" fill="#fff7ed" font-family="Arial, sans-serif" font-size="58" font-weight="700">Mars</text>
+  <text x="88" y="170" fill="#fed7aa" font-family="Arial, sans-serif" font-size="28">Planete rouge et rover</text>
+</svg>

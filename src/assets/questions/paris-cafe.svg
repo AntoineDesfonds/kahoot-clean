@@ -1,0 +1,12 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#9f1239"/>
+  <rect x="204" y="212" width="792" height="420" rx="24" fill="#fff1f2"/>
+  <rect x="204" y="212" width="792" height="110" rx="24" fill="#fb7185"/>
+  <path d="M244 322h710" stroke="#be123c" stroke-width="18"/>
+  <path d="M324 470h142v162H324zM558 430h142v202H558zM790 470h142v162H790z" fill="#fecdd3"/>
+  <circle cx="458" cy="608" r="22" fill="#9f1239"/>
+  <circle cx="510" cy="608" r="22" fill="#9f1239"/>
+  <path d="M430 416c0-38 31-68 68-68s68 30 68 68h-136z" fill="#fda4af"/>
+  <text x="88" y="118" fill="#fff1f2" font-family="Arial, sans-serif" font-size="58" font-weight="700">Paris cafe</text>
+  <text x="88" y="170" fill="#fecdd3" font-family="Arial, sans-serif" font-size="28">Une ambiance de cinema a Montmartre</text>
+</svg>

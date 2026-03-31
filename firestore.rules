@@ -1,0 +1,494 @@
+rules_version='2'
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(ownerId) {
+      return isSignedIn() && request.auth.uid == ownerId;
+    }
+
+    function isQuizOwner(quizId) {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/quizzes/$(quizId))
+        && get(/databases/$(database)/documents/quizzes/$(quizId)).data.ownerId == request.auth.uid;
+    }
+
+    function isQuizOwnerAfter(quizId) {
+      return isSignedIn()
+        && existsAfter(/databases/$(database)/documents/quizzes/$(quizId))
+        && getAfter(/databases/$(database)/documents/quizzes/$(quizId)).data.ownerId == request.auth.uid;
+    }
+
+    function isValidGameStatus(status) {
+      return status in ['waiting', 'in-progress', 'finished'];
+    }
+
+    function isValidQuestionStatus(status) {
+      return status in ['waiting', 'in-progress', 'review'];
+    }
+
+    function game(gameId) {
+      return get(/databases/$(database)/documents/games/$(gameId)).data;
+    }
+
+    function gameAfter(gameId) {
+      return getAfter(/databases/$(database)/documents/games/$(gameId)).data;
+    }
+
+    function gameExistsAfter(gameId) {
+      return existsAfter(/databases/$(database)/documents/games/$(gameId));
+    }
+
+    function isGameHost(gameId) {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/games/$(gameId))
+        && game(gameId).hostId == request.auth.uid;
+    }
+
+    function isGameHostAfter(gameId) {
+      return isSignedIn()
+        && existsAfter(/databases/$(database)/documents/games/$(gameId))
+        && gameAfter(gameId).hostId == request.auth.uid;
+    }
+
+    function isGamePlayer(gameId) {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/games/$(gameId)/players/$(request.auth.uid));
+    }
+
+    function isGameParticipant(gameId) {
+      return isGameHost(gameId) || isGamePlayer(gameId);
+    }
+
+    function isOwnPlayer(playerId) {
+      return isSignedIn() && playerId == request.auth.uid;
+    }
+
+    function isOwnResponseDocument(responseId) {
+      return isSignedIn()
+        && responseId.matches('^[0-9]+_' + request.auth.uid + '$');
+    }
+
+    function isValidUserDocument(data) {
+      return data.keys().hasOnly(['alias'])
+        && data.alias is string
+        && data.alias.size() > 0
+        && data.alias.size() <= 40;
+    }
+
+    function isValidQuizDocument(data, ownerId) {
+      return data.keys().hasOnly([
+          'ownerId',
+          'title',
+          'description',
+          'coverImageUrl',
+          'themeColor',
+          'estimatedDurationMinutes',
+          'questionsCount',
+        ])
+        && data.ownerId == ownerId
+        && data.title is string
+        && data.title.size() > 0
+        && data.title.size() <= 80
+        && data.description is string
+        && data.description.size() > 0
+        && data.description.size() <= 280
+        && data.coverImageUrl is string
+        && data.coverImageUrl.size() <= 120000
+        && data.themeColor is string
+        && data.themeColor.size() > 0
+        && data.themeColor.size() <= 16
+        && data.estimatedDurationMinutes is int
+        && data.estimatedDurationMinutes >= 2
+        && data.estimatedDurationMinutes <= 60
+        && data.questionsCount is int
+        && data.questionsCount >= 0
+        && data.questionsCount <= 200;
+    }
+
+    function isValidChoice(choice) {
+      return choice is map
+        && choice.keys().hasOnly(['text', 'imageUrl'])
+        && choice.text is string
+        && choice.text.size() > 0
+        && choice.text.size() <= 120
+        && choice.imageUrl is string
+        && choice.imageUrl.size() <= 120000;
+    }
+
+    function isValidQuestionDocument(data) {
+      return data.keys().hasOnly([
+          'order',
+          'text',
+          'imageUrl',
+          'correctChoiceIndex',
+          'choices',
+        ])
+        && data.order is int
+        && data.order >= 0
+        && data.text is string
+        && data.text.size() > 0
+        && data.text.size() <= 200
+        && data.imageUrl is string
+        && data.imageUrl.size() <= 120000
+        && data.correctChoiceIndex is int
+        && data.correctChoiceIndex >= 0
+        && data.choices is list
+        && data.choices.size() >= 2
+        && data.choices.size() <= 6
+        && isValidChoice(data.choices[0])
+        && isValidChoice(data.choices[1])
+        && (data.choices.size() <= 2 || isValidChoice(data.choices[2]))
+        && (data.choices.size() <= 3 || isValidChoice(data.choices[3]))
+        && (data.choices.size() <= 4 || isValidChoice(data.choices[4]))
+        && (data.choices.size() <= 5 || isValidChoice(data.choices[5]))
+        && data.correctChoiceIndex < data.choices.size();
+    }
+
+    function isValidGameCodeDocument(data) {
+      return data.keys().hasOnly(['gameId', 'hostId', 'status'])
+        && data.gameId is string
+        && data.gameId.size() > 0
+        && data.hostId == request.auth.uid
+        && isValidGameStatus(data.status);
+    }
+
+    function isValidGameDocument(data) {
+      return data.keys().hasOnly([
+          'hostId',
+          'quizId',
+          'quizTitle',
+          'quizCoverImageUrl',
+          'quizThemeColor',
+          'createdAt',
+          'updatedAt',
+          'startedAt',
+          'finishedAt',
+          'status',
+          'entryCode',
+          'currentQuestionIndex',
+          'currentQuestionStatus',
+          'totalQuestions',
+          'currentQuestionId',
+          'currentQuestionText',
+          'currentQuestionImageUrl',
+          'currentQuestionChoices',
+          'questionDurationSeconds',
+          'currentQuestionStartedAt',
+          'currentQuestionEndsAt',
+          'answerCount',
+          'revealedCorrectChoiceIndex',
+        ])
+        && data.hostId == request.auth.uid
+        && data.quizId is string
+        && (
+          !data.keys().hasAny(['quizTitle'])
+          || (
+            data.quizTitle is string
+            && data.quizTitle.size() > 0
+            && data.quizTitle.size() <= 100
+          )
+        )
+        && (
+          !data.keys().hasAny(['quizCoverImageUrl'])
+          || (
+            data.quizCoverImageUrl is string
+            && data.quizCoverImageUrl.size() > 0
+            && data.quizCoverImageUrl.size() <= 120000
+          )
+        )
+        && (
+          !data.keys().hasAny(['quizThemeColor'])
+          || (
+            data.quizThemeColor is string
+            && data.quizThemeColor.size() > 0
+            && data.quizThemeColor.size() <= 16
+          )
+        )
+        && data.entryCode is string
+        && data.entryCode.size() == 6
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp
+        && (data.startedAt == null || data.startedAt is timestamp)
+        && (data.finishedAt == null || data.finishedAt is timestamp)
+        && isValidGameStatus(data.status)
+        && data.currentQuestionIndex is int
+        && data.currentQuestionIndex >= 0
+        && isValidQuestionStatus(data.currentQuestionStatus)
+        && data.totalQuestions is int
+        && data.totalQuestions >= 1
+        && (data.currentQuestionId == null || data.currentQuestionId is string)
+        && (data.currentQuestionText == null || data.currentQuestionText is string)
+        && (
+          data.currentQuestionImageUrl == null
+          || (
+            data.currentQuestionImageUrl is string
+            && data.currentQuestionImageUrl.size() <= 120000
+          )
+        )
+        && data.currentQuestionChoices is list
+        && data.currentQuestionChoices.size() <= 6
+        && (
+          !data.keys().hasAny(['questionDurationSeconds'])
+          || (
+            data.questionDurationSeconds is int
+            && data.questionDurationSeconds >= 5
+            && data.questionDurationSeconds <= 120
+          )
+        )
+        && (
+          !data.keys().hasAny(['currentQuestionStartedAt'])
+          || data.currentQuestionStartedAt == null
+          || data.currentQuestionStartedAt is timestamp
+        )
+        && (
+          !data.keys().hasAny(['currentQuestionEndsAt'])
+          || data.currentQuestionEndsAt == null
+          || data.currentQuestionEndsAt is timestamp
+        )
+        && data.answerCount is int
+        && data.answerCount >= 0
+        && (
+          data.revealedCorrectChoiceIndex == null
+          || (
+            data.revealedCorrectChoiceIndex is int
+            && data.revealedCorrectChoiceIndex >= 0
+          )
+        );
+    }
+
+    function isValidPlayerDocument(data) {
+      return data.keys().hasOnly([
+          'alias',
+          'score',
+          'joinedAt',
+          'totalAnswerTimeMs',
+          'correctAnswers',
+          'currentQuestionIndex',
+          'currentQuestionStartedAt',
+          'finishedAt',
+        ])
+        && data.alias is string
+        && data.alias.size() > 0
+        && data.alias.size() <= 40
+        && data.score is int
+        && data.score >= 0
+        && data.joinedAt is timestamp
+        && (
+          !data.keys().hasAny(['totalAnswerTimeMs'])
+          || (
+            data.totalAnswerTimeMs is int
+            && data.totalAnswerTimeMs >= 0
+          )
+        )
+        && (
+          !data.keys().hasAny(['correctAnswers'])
+          || (
+            data.correctAnswers is int
+            && data.correctAnswers >= 0
+          )
+        )
+        && (
+          !data.keys().hasAny(['currentQuestionIndex'])
+          || (
+            data.currentQuestionIndex is int
+            && data.currentQuestionIndex >= 0
+          )
+        )
+        && (
+          !data.keys().hasAny(['currentQuestionStartedAt'])
+          || data.currentQuestionStartedAt == null
+          || data.currentQuestionStartedAt is timestamp
+        )
+        && (
+          !data.keys().hasAny(['finishedAt'])
+          || data.finishedAt == null
+          || data.finishedAt is timestamp
+        );
+    }
+
+    function isValidPlayerResponse(data, gameId) {
+      return data.keys().hasOnly([
+          'playerId',
+          'questionId',
+          'questionIndex',
+          'selectedChoiceIndex',
+          'answeredAt',
+          'scored',
+          'isCorrect',
+          'responseTimeMs',
+        ])
+        && data.playerId == request.auth.uid
+        && data.questionId is string
+        && data.questionId.size() > 0
+        && data.questionIndex is int
+        && data.questionIndex >= 0
+        && data.selectedChoiceIndex is int
+        && data.selectedChoiceIndex >= 0
+        && data.answeredAt is timestamp
+        && data.scored == true
+        && data.isCorrect is bool
+        && data.responseTimeMs is int
+        && data.responseTimeMs >= 0
+        && game(gameId).status == 'in-progress';
+    }
+
+    function isWaitingPlayerState(data) {
+      return isValidPlayerDocument(data)
+        && data.score == 0
+        && data.totalAnswerTimeMs == 0
+        && data.correctAnswers == 0
+        && data.currentQuestionIndex == 0
+        && data.currentQuestionStartedAt == null
+        && data.finishedAt == null;
+    }
+
+    function isSelfWaitingPlayerWrite(gameId, playerId) {
+      return isOwnPlayer(playerId)
+        && gameExistsAfter(gameId)
+        && gameAfter(gameId).status == 'waiting'
+        && isWaitingPlayerState(request.resource.data);
+    }
+
+    function isSelfInProgressAdvance(gameId, playerId) {
+      return isOwnPlayer(playerId)
+        && exists(/databases/$(database)/documents/games/$(gameId)/players/$(playerId))
+        && gameExistsAfter(gameId)
+        && gameAfter(gameId).status == 'in-progress'
+        && isValidPlayerDocument(request.resource.data)
+        && request.resource.data.alias == resource.data.alias
+        && request.resource.data.joinedAt == resource.data.joinedAt
+        && request.resource.data.currentQuestionIndex == resource.data.currentQuestionIndex + 1
+        && request.resource.data.totalAnswerTimeMs >= resource.data.totalAnswerTimeMs
+        && request.resource.data.correctAnswers >= resource.data.correctAnswers
+        && request.resource.data.score >= resource.data.score;
+    }
+
+    function isParticipantFinishUpdate(gameId) {
+      return isGameParticipant(gameId)
+        && request.resource.data.hostId == resource.data.hostId
+        && request.resource.data.quizId == resource.data.quizId
+        && request.resource.data.quizTitle == resource.data.quizTitle
+        && request.resource.data.quizCoverImageUrl == resource.data.quizCoverImageUrl
+        && request.resource.data.quizThemeColor == resource.data.quizThemeColor
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.startedAt == resource.data.startedAt
+        && request.resource.data.entryCode == resource.data.entryCode
+        && request.resource.data.currentQuestionIndex == resource.data.currentQuestionIndex
+        && request.resource.data.currentQuestionStatus == resource.data.currentQuestionStatus
+        && request.resource.data.totalQuestions == resource.data.totalQuestions
+        && request.resource.data.currentQuestionId == resource.data.currentQuestionId
+        && request.resource.data.currentQuestionText == resource.data.currentQuestionText
+        && request.resource.data.currentQuestionImageUrl == resource.data.currentQuestionImageUrl
+        && request.resource.data.currentQuestionChoices == resource.data.currentQuestionChoices
+        && request.resource.data.questionDurationSeconds == resource.data.questionDurationSeconds
+        && request.resource.data.currentQuestionStartedAt == resource.data.currentQuestionStartedAt
+        && request.resource.data.currentQuestionEndsAt == resource.data.currentQuestionEndsAt
+        && request.resource.data.answerCount == resource.data.answerCount
+        && request.resource.data.revealedCorrectChoiceIndex == resource.data.revealedCorrectChoiceIndex
+        && request.resource.data.status == 'finished'
+        && request.resource.data.finishedAt is timestamp
+        && request.resource.data.updatedAt is timestamp;
+    }
+
+    match /users/{userId} {
+      allow read: if isSignedIn();
+      allow delete: if isSignedIn() && userId == request.auth.uid;
+      allow create, update: if isSignedIn()
+        && userId == request.auth.uid
+        && isValidUserDocument(request.resource.data);
+    }
+
+    match /quizzes/{quizId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn()
+        && isValidQuizDocument(request.resource.data, request.auth.uid);
+      allow update: if isOwner(resource.data.ownerId)
+        && isValidQuizDocument(request.resource.data, resource.data.ownerId);
+      allow delete: if isOwner(resource.data.ownerId);
+
+      match /questions/{questionId} {
+        allow read: if isSignedIn();
+        allow delete: if isQuizOwner(quizId);
+        allow create, update: if (
+            isQuizOwner(quizId)
+            || isQuizOwnerAfter(quizId)
+          )
+          && isValidQuestionDocument(request.resource.data);
+      }
+    }
+
+    match /gameCodes/{entryCode} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && isValidGameCodeDocument(request.resource.data);
+      allow update: if isSignedIn()
+        && request.resource.data.gameId == resource.data.gameId
+        && request.resource.data.hostId == resource.data.hostId
+        && isValidGameStatus(request.resource.data.status)
+        && (
+          resource.data.hostId == request.auth.uid
+          || (
+            request.resource.data.status == 'finished'
+            && getAfter(/databases/$(database)/documents/games/$(resource.data.gameId)).data.status == 'finished'
+          )
+        );
+      allow delete: if isSignedIn() && resource.data.hostId == request.auth.uid;
+    }
+
+    match /games/{gameId} {
+      allow read: if isGameParticipant(gameId);
+      allow create: if isSignedIn()
+        && isValidGameDocument(request.resource.data)
+        && exists(/databases/$(database)/documents/quizzes/$(request.resource.data.quizId));
+      allow update: if (
+          isGameHost(gameId)
+          && request.resource.data.hostId == resource.data.hostId
+          && request.resource.data.quizId == resource.data.quizId
+          && request.resource.data.entryCode == resource.data.entryCode
+          && request.resource.data.totalQuestions == resource.data.totalQuestions
+          && isValidGameDocument(request.resource.data)
+        ) || isParticipantFinishUpdate(gameId);
+      allow delete: if isGameHost(gameId);
+
+      match /players/{playerId} {
+        allow get: if isGameParticipant(gameId)
+          || (isSignedIn() && playerId == request.auth.uid);
+        allow list: if isGameParticipant(gameId);
+        allow create, update: if (
+            (isGameHost(gameId) || isGameHostAfter(gameId))
+            && isValidPlayerDocument(request.resource.data)
+          )
+          || isSelfWaitingPlayerWrite(gameId, playerId)
+          || isSelfInProgressAdvance(gameId, playerId);
+        allow delete: if isGameHost(gameId);
+      }
+
+      match /questions/{questionId} {
+        allow get, list: if isGameParticipant(gameId);
+        allow create, update: if (
+            isGameHost(gameId)
+            || isGameHostAfter(gameId)
+          )
+          && isValidQuestionDocument(request.resource.data);
+        allow delete: if isGameHost(gameId);
+      }
+
+      match /responses/{responseId} {
+        allow get: if isGameHost(gameId)
+          || (
+            isGamePlayer(gameId)
+            && isOwnResponseDocument(responseId)
+          );
+        allow list: if isGameHost(gameId);
+        allow create: if isGamePlayer(gameId)
+          && isOwnResponseDocument(responseId)
+          && isValidPlayerResponse(request.resource.data, gameId);
+        allow update: if false;
+        allow delete: if isGameHost(gameId);
+      }
+    }
+  }
+}

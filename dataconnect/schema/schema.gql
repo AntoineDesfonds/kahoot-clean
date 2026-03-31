@@ -1,0 +1,48 @@
+type User @table {
+  username: String!
+  email: String!
+  passwordHash: String!
+  createdAt: Timestamp!
+  displayName: String
+  avatarUrl: String
+}
+
+type Quiz @table {
+  title: String!
+  description: String!
+  createdAt: Timestamp!
+  createdByUserId: User!
+  visibility: String
+}
+
+type Question @table {
+  quizId: Quiz!
+  text: String!
+  questionType: String!
+  order: Int!
+  imageUrl: String
+  timeLimitSeconds: Int
+}
+
+type AnswerOption @table {
+  questionId: Question!
+  text: String!
+  isCorrect: Boolean!
+}
+
+type GameSession @table {
+  quizId: Quiz!
+  hostUserId: User!
+  gameCode: String!
+  status: String!
+  createdAt: Timestamp!
+  currentQuestionId: Question
+}
+
+type PlayerScore @table {
+  gameSessionId: GameSession!
+  userId: User!
+  score: Int!
+  joinedAt: Timestamp!
+  nickname: String
+}

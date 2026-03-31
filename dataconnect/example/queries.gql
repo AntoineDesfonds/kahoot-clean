@@ -1,0 +1,62 @@
+# Operation 1: Fetch all Quizzes (Publicly accessible)
+query AllQuizzes @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  quizzes {
+    id
+    title
+    description
+    visibility
+    createdByUserId {
+      id
+      username
+      displayName
+    }
+    createdAt
+  }
+}
+
+# Operation 2: Create a new Quiz (Requires logged-in user)
+mutation CreateNewQuiz($title: String!, $description: String!, $visibility: String) @auth(level: USER, insecureReason: "This operation allows any logged-in user to create a quiz.") {
+  quiz_insert(data: {
+    title: $title,
+    description: $description,
+    createdByUserId_expr: "auth.uid",
+    createdAt_expr: "request.time",
+    visibility: $visibility
+  }) {
+    id
+  }
+}
+
+# Operation 3: Get a specific Game Session by ID (Publicly accessible for joining)
+query GetGameSessionById($id: UUID!) @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public as game sessions can be joined by anyone with the ID.") {
+  gameSession(id: $id) {
+    id
+    gameCode
+    status
+    quizId {
+      id
+      title
+    }
+    hostUserId {
+      id
+      username
+    }
+    currentQuestionId {
+      id
+      text
+      order
+    }
+  }
+}
+
+# Operation 4: Update a Player's Score (Requires logged-in user)
+mutation UpdatePlayerScore($id: UUID!, $score: Int!) @auth(level: USER, expr: "auth.uid == (query.playerScore(id: $id).userIdId)", insecureReason: "This operation allows a logged-in user to update their own score in a specific game session.") {
+  playerScore_update(
+    id: $id,
+    data: {
+      score: $score
+    }
+  ) {
+    id
+  }
+}

@@ -1,0 +1,10 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#1e3a8a"/>
+  <circle cx="952" cy="182" r="110" fill="#93c5fd" fill-opacity="0.26"/>
+  <path d="M366 522c88-42 172-42 252 0 80-42 164-42 252 0V270c-88-42-172-42-252 0-80-42-164-42-252 0v252z" fill="#f8fafc"/>
+  <path d="M618 270v252" stroke="#1e3a8a" stroke-width="10"/>
+  <path d="M770 170l12 34h34l-28 20 10 34-28-20-28 20 10-34-28-20h34l12-34z" fill="#fcd34d"/>
+  <path d="M910 266l9 25h25l-20 14 8 24-22-16-20 16 8-24-20-14h25l7-25z" fill="#fde68a"/>
+  <text x="88" y="118" fill="#eff6ff" font-family="Arial, sans-serif" font-size="58" font-weight="700">Livre et etoiles</text>
+  <text x="88" y="170" fill="#bfdbfe" font-family="Arial, sans-serif" font-size="28">Une image pour la litterature et limaginaire</text>
+</svg>

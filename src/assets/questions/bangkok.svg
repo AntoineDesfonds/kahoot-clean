@@ -1,0 +1,10 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#0369a1"/>
+  <circle cx="946" cy="152" r="126" fill="#fef3c7" fill-opacity="0.34"/>
+  <rect y="610" width="1200" height="190" fill="#082f49" fill-opacity="0.2"/>
+  <path d="M244 632h712v70H244z" fill="#e0f2fe" fill-opacity="0.18"/>
+  <path d="M340 616l52-202 52 202H340zM514 616l58-248 58 248H514zM712 616l54-218 54 218H712z" fill="#fde68a" fill-opacity="0.78"/>
+  <path d="M322 448h140l-70-70-70 70zM490 412h164l-82-90-82 90zM690 430h152l-76-80-76 80z" fill="#fef3c7" fill-opacity="0.9"/>
+  <text x="88" y="118" fill="#f0f9ff" font-family="Arial, sans-serif" font-size="58" font-weight="700">Bangkok</text>
+  <text x="88" y="170" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="28">Temples dores et ciel tropical</text>
+</svg>
